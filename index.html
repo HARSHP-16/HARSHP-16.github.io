@@ -1,0 +1,632 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- Primary SEO Meta Tags -->
+  <title>Harsh Palkrutwar // Systems & AI Engineer</title>
+  <meta name="description" content="Portfolio of Harsh Palkrutwar, a Systems-focused Computer Engineering sophomore at I²IT Pune, specializing in Web Development, AI/ML models, and secure software solutions.">
+  <meta name="keywords" content="Harsh Palkrutwar, Computer Engineering, Portfolio, Full-Stack Developer, AI, Machine Learning, I2IT Pune, GSSoC, AWS Cloud Club">
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+  
+  <!-- Tailwind Play CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            bgBase: 'var(--bg-base)',
+            bgSurface: 'var(--bg-surface)',
+            borderMute: 'var(--border-mute)',
+            textPrimary: 'var(--text-primary)',
+            textMuted: 'var(--text-muted)',
+            accentTech: 'var(--accent-color)',
+          },
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+            display: ['Space Grotesk', 'sans-serif'],
+            mono: ['JetBrains Mono', 'monospace'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- External Stylesheet Split -->
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/animations.css">
+</head>
+<body class="bg-bgBase text-textPrimary font-sans antialiased relative min-h-screen snappy-transition">
+
+  <!-- Interactive Network Background Canvas -->
+  <canvas id="canvas-bg" class="fixed top-0 left-0 w-full h-full pointer-events-none z-0 opacity-20"></canvas>
+  <div id="grid-pattern-overlay" class="fixed top-0 left-0 w-full h-full pointer-events-none z-10 grid-bg"></div>
+
+  <!-- Header Navigation -->
+  <header class="sticky top-0 z-50 backdrop-blur-xl bg-bgBase/75 border-b border-borderMute transition-all duration-300">
+    <div class="max-w-6xl mx-auto px-4 py-4 flex items-center justify-between">
+      
+      <!-- Brand Logo -->
+      <a href="#about" class="flex items-center space-x-2.5">
+        <span id="theme-dot" class="w-3 h-3 rounded-full bg-accentTech shadow-glow animate-pulse"></span>
+        <span class="font-display font-bold text-lg tracking-tight hover:text-accentTech snappy-transition">
+          HARSH PALKRUTWAR <span class="text-xs text-textMuted font-mono font-normal ml-1">// SYSTEMS & AI</span>
+        </span>
+      </a>
+
+      <!-- Desktop Nav Menu -->
+      <nav class="hidden md:flex items-center space-x-8 text-sm font-medium">
+        <a href="#about" class="hover:text-accentTech snappy-transition">About</a>
+        <a href="#achievements" class="hover:text-accentTech snappy-transition">Milestones</a>
+        <a href="#skills" class="hover:text-accentTech snappy-transition">Skills</a>
+        <a href="#projects-cards" class="hover:text-accentTech snappy-transition">Projects</a>
+        <a href="#experience" class="hover:text-accentTech snappy-transition">Experience</a>
+      </nav>
+
+      <!-- Theme Switcher Control -->
+      <div class="flex items-center space-x-3">
+        <button id="theme-toggle-btn" class="p-2 border border-borderMute bg-bgSurface/40 hover:bg-bgSurface rounded-lg snappy-transition text-xs flex items-center justify-center text-textMuted hover:text-textPrimary" title="Toggle Light/Dark Theme">
+          <span id="theme-icon" class="text-sm">🌙</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Container -->
+  <main class="max-w-6xl mx-auto px-4 py-12 relative z-20 space-y-16">
+
+    <!-- Section: Hero Summary -->
+    <section id="about" class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center pt-4">
+      <div class="lg:col-span-8 space-y-6">
+        <div class="flex items-center space-x-2 font-mono text-xs">
+          <span class="px-2 py-0.5 bg-accentTech/10 text-accentTech border border-accentTech/20 rounded font-bold uppercase tracking-wider">ENGINEERING PORTFOLIO</span>
+          <span class="text-textMuted">&bull; WEB APPLICATIONS & AI PIPELINES</span>
+        </div>
+        <h1 class="text-4xl sm:text-6xl font-display font-bold tracking-tight text-textPrimary leading-none">
+          Developing intelligent web applications and predictive models.
+        </h1>
+        <p class="text-textMuted text-base sm:text-lg leading-relaxed font-sans max-w-2xl">
+          I am a Computer Engineering sophomore at <strong class="text-textPrimary">I²IT Pune</strong> focusing on full-stack web development and applied machine learning. I design bilingual OCR document pipelines, secure client-side analytics dashboards, and predictive forecasting systems.
+        </p>
+
+        <!-- Core stats grid -->
+        <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 pt-2">
+          <div class="premium-card p-4 rounded-xl">
+            <div class="text-textMuted font-mono text-[9px] uppercase tracking-wider mb-1">Graduation</div>
+            <div class="text-textPrimary font-display font-bold text-sm">2028</div>
+          </div>
+          <div class="premium-card p-4 rounded-xl">
+            <div class="text-textMuted font-mono text-[9px] uppercase tracking-wider mb-1">Focus Domains</div>
+            <div class="text-textPrimary font-display font-bold text-sm">Full-Stack / AI-ML</div>
+          </div>
+          <div class="premium-card p-4 rounded-xl">
+            <div class="text-textMuted font-mono text-[9px] uppercase tracking-wider mb-1">Current Base</div>
+            <div class="text-textPrimary font-display font-bold text-sm">Pune, India</div>
+          </div>
+          <div class="premium-card p-4 rounded-xl">
+            <div class="text-textMuted font-mono text-[9px] uppercase tracking-wider mb-1">Primary Mail</div>
+            <a href="mailto:palkrutwarharsh@gmail.com" class="text-accentTech hover:underline block truncate font-display font-bold text-sm">palkrutwarharsh@gmail.com</a>
+          </div>
+        </div>
+
+        <!-- Actions -->
+        <div class="flex flex-wrap gap-3 pt-2 font-mono text-xs">
+          <a href="https://harshp-16.github.io/Portfolio-website/Resume/Harsh%20palkrutwar%20Resume.pdf" target="_blank" class="px-5 py-3 text-bgBase bg-accentTech hover:bg-accentTech/90 font-bold rounded-lg shadow-glow snappy-transition">
+            DOWNLOAD_RESUME.pdf
+          </a>
+          <a href="https://github.com/HARSHP-16" target="_blank" class="px-5 py-3 border border-borderMute bg-bgSurface/40 hover:bg-bgSurface text-textPrimary hover:border-accentTech rounded-lg snappy-transition">
+            GITHUB_PROFILE
+          </a>
+          <a href="https://www.linkedin.com/in/harsh-palkrutwar/" target="_blank" class="px-5 py-3 border border-borderMute bg-bgSurface/40 hover:bg-bgSurface text-textPrimary hover:border-accentTech rounded-lg snappy-transition">
+            LINKEDIN_PROFILE
+          </a>
+        </div>
+      </div>
+
+      <div class="lg:col-span-4 flex items-center justify-center">
+        <!-- Abstract Graphic Ring -->
+        <div class="relative w-64 h-64 flex items-center justify-center">
+          <div class="absolute inset-0 rounded-full border border-dashed border-accentTech/20 animate-spin" style="animation-duration: 25s;"></div>
+          <div class="absolute inset-4 rounded-full border border-double border-accentTech/10 animate-spin" style="animation-duration: 15s; animation-direction: reverse;"></div>
+          <div class="absolute inset-8 rounded-full bg-gradient-to-tr from-accentTech/5 to-transparent blur-xl"></div>
+          
+          <div class="relative w-40 h-40 rounded-full border border-borderMute bg-bgSurface flex flex-col items-center justify-center text-center p-4">
+            <span class="text-2xl mb-1">💻</span>
+            <div class="font-display font-bold text-xs tracking-wider">HARSH R.P.</div>
+            <div class="text-[9px] text-textMuted font-mono mt-1">SOUP CLIENT & RUNNER</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section: Featured Milestones -->
+    <section id="achievements" class="space-y-6">
+      <div class="border-b border-borderMute pb-4">
+        <h2 class="font-display font-bold text-xl text-textPrimary">
+          Featured Engineering Milestones
+        </h2>
+      </div>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+        
+        <!-- KMRL -->
+        <div class="premium-card p-5 rounded-xl border-glow snappy-transition flex flex-col justify-between">
+          <div class="space-y-3">
+            <div class="flex justify-between items-center text-[10px] font-mono">
+              <span class="text-accentTech font-bold">[PROD DEPLOY]</span>
+              <span class="text-textMuted">KMRL METRO</span>
+            </div>
+            <h3 class="text-textPrimary font-display font-bold text-base">Bilingual OCR System</h3>
+            <p class="text-textMuted text-xs leading-relaxed">
+              Architected scanning indexer catalog for Kochi Metro Rail Ltd. Parsing scanned Malayalam & English transit files with automated DB tagging.
+            </p>
+          </div>
+          <div class="text-[10px] text-accentTech font-mono mt-4 pt-2 border-t border-borderMute">
+            ~92% Character Accuracy
+          </div>
+        </div>
+
+        <!-- XGBoost -->
+        <div class="premium-card p-5 rounded-xl border-glow snappy-transition flex flex-col justify-between">
+          <div class="space-y-3">
+            <div class="flex justify-between items-center text-[10px] font-mono">
+              <span class="text-emerald-500 font-bold">[ML INTERNSHIP]</span>
+              <span class="text-textMuted">SHELL / AICTE</span>
+            </div>
+            <h3 class="text-textPrimary font-display font-bold text-base">EV Grid Stress ML</h3>
+            <p class="text-textMuted text-xs leading-relaxed">
+              Evaluated grid charging stress nodes. Trained XGBoost regression models to forecast bottlenecks and charging peak stresses.
+            </p>
+          </div>
+          <div class="text-[10px] text-emerald-400 font-mono mt-4 pt-2 border-t border-borderMute">
+            KNN Imputation for Missing Logs
+          </div>
+        </div>
+
+        <!-- GSSoC -->
+        <div class="premium-card p-5 rounded-xl border-glow snappy-transition flex flex-col justify-between">
+          <div class="space-y-3">
+            <div class="flex justify-between items-center text-[10px] font-mono">
+              <span class="text-purple-400 font-bold">[OPEN SOURCE]</span>
+              <span class="text-textMuted">GSSoC '25</span>
+            </div>
+            <h3 class="text-textPrimary font-display font-bold text-base">Git Community PRs</h3>
+            <p class="text-textMuted text-xs leading-relaxed">
+              Contributed to active developer utilities, fixing race variables, structuring REST API endpoints, and resolving memory leaks.
+            </p>
+          </div>
+          <div class="text-[10px] text-purple-400 font-mono mt-4 pt-2 border-t border-borderMute">
+            140+ Commits Merged
+          </div>
+        </div>
+
+        <!-- Certification -->
+        <div class="premium-card p-5 rounded-xl border-glow snappy-transition flex flex-col justify-between">
+          <div class="space-y-3">
+            <div class="flex justify-between items-center text-[10px] font-mono">
+              <span class="text-cyan-400 font-bold">[ACCREDITED]</span>
+              <span class="text-textMuted">ISRO & AWS</span>
+            </div>
+            <h3 class="text-textPrimary font-display font-bold text-base">Space Sci & Cloud</h3>
+            <p class="text-textMuted text-xs leading-relaxed">
+              Certified in ISRO IIRS Remote Sensing Basics. Actively supporting AWS Cloud Club deployment documentation.
+            </p>
+          </div>
+          <div class="text-[10px] text-cyan-400 font-mono mt-4 pt-2 border-t border-borderMute">
+            Official Credential Records
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Section: Technical Skills & Git Stats -->
+    <section id="skills" class="grid grid-cols-1 lg:grid-cols-12 gap-6">
+      
+      <!-- Technical Skills Matrix -->
+      <div class="lg:col-span-8 space-y-6">
+        <div class="border-b border-borderMute pb-4">
+          <h2 class="font-display font-bold text-xl text-textPrimary">
+            Technical Skills Matrix
+          </h2>
+        </div>
+        
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          
+          <!-- Languages -->
+          <div class="premium-card p-5 rounded-xl space-y-3">
+            <div class="text-accentTech font-mono text-xs font-bold uppercase tracking-wider">// Languages & Core</div>
+            <div class="flex flex-wrap gap-1.5">
+              <span class="bg-bgBase border border-borderMute px-2.5 py-1 text-xs text-textPrimary rounded-lg">C++ (OOP / DSA)</span>
+              <span class="bg-bgBase border border-borderMute px-2.5 py-1 text-xs text-textPrimary rounded-lg">Python (ML Core)</span>
+              <span class="bg-bgBase border border-borderMute px-2.5 py-1 text-xs text-textPrimary rounded-lg">JavaScript (ES6+)</span>
+              <span class="bg-bgBase border border-borderMute px-2.5 py-1 text-xs text-textPrimary rounded-lg">Java</span>
+              <span class="bg-bgBase border border-borderMute px-2.5 py-1 text-xs text-textPrimary rounded-lg">C Programming</span>
+            </div>
+          </div>
+
+          <!-- Backend -->
+          <div class="premium-card p-5 rounded-xl space-y-3">
+            <div class="text-accentTech font-mono text-xs font-bold uppercase tracking-wider">// Backend & Routing</div>
+            <div class="flex flex-wrap gap-1.5">
+              <span class="bg-bgBase border border-borderMute px-2.5 py-1 text-xs text-textPrimary rounded-lg">Flask (REST APIs)</span>
+              <span class="bg-bgBase border border-borderMute px-2.5 py-1 text-xs text-textPrimary rounded-lg">Express.js (Node)</span>
+              <span class="bg-bgBase border border-borderMute px-2.5 py-1 text-xs text-textPrimary rounded-lg">REST API Architect</span>
+              <span class="bg-bgBase border border-borderMute px-2.5 py-1 text-xs text-textPrimary rounded-lg">HTML5 / CSS3</span>
+            </div>
+          </div>
+
+          <!-- Database & Cloud -->
+          <div class="premium-card p-5 rounded-xl space-y-3">
+            <div class="text-accentTech font-mono text-xs font-bold uppercase tracking-wider">// Databases & Deployments</div>
+            <div class="flex flex-wrap gap-1.5">
+              <span class="bg-bgBase border border-borderMute px-2.5 py-1 text-xs text-textPrimary rounded-lg">SQL (SQLite / MySQL)</span>
+              <span class="bg-bgBase border border-borderMute px-2.5 py-1 text-xs text-textPrimary rounded-lg">MongoDB</span>
+              <span class="bg-bgBase border border-borderMute px-2.5 py-1 text-xs text-textPrimary rounded-lg">AWS Basics (EC2, S3)</span>
+              <span class="bg-bgBase border border-borderMute px-2.5 py-1 text-xs text-textPrimary rounded-lg">Git / GitHub VCS</span>
+            </div>
+          </div>
+
+          <!-- Data Science -->
+          <div class="premium-card p-5 rounded-xl space-y-3">
+            <div class="text-accentTech font-mono text-xs font-bold uppercase tracking-wider">// Data Libraries</div>
+            <div class="flex flex-wrap gap-1.5">
+              <span class="bg-bgBase border border-borderMute px-2.5 py-1 text-xs text-textPrimary rounded-lg">Pandas Library</span>
+              <span class="bg-bgBase border border-borderMute px-2.5 py-1 text-xs text-textPrimary rounded-lg">NumPy System</span>
+              <span class="bg-bgBase border border-borderMute px-2.5 py-1 text-xs text-textPrimary rounded-lg">Jupyter Analytics</span>
+              <span class="bg-bgBase border border-borderMute px-2.5 py-1 text-xs text-textPrimary rounded-lg">VS Code Editor</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- GitHub Live widget -->
+      <div class="lg:col-span-4 premium-card p-5 rounded-xl flex flex-col justify-between">
+        <div class="space-y-4">
+          <div class="flex justify-between items-center">
+            <span class="text-xs font-mono font-bold text-accentTech">// SOURCE SYNC</span>
+            <span class="px-2 py-0.5 text-[9px] bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 rounded font-mono font-bold">API ACTIVE</span>
+          </div>
+          
+          <div class="grid grid-cols-2 gap-2 text-center">
+            <div class="bg-bgBase/70 p-3 border border-borderMute rounded-lg">
+              <div class="text-xl font-display font-bold text-textPrimary" id="github-repos">22</div>
+              <div class="text-[9px] text-textMuted uppercase font-mono mt-0.5">Repositories</div>
+            </div>
+            <div class="bg-bgBase/70 p-3 border border-borderMute rounded-lg">
+              <div class="text-xl font-display font-bold text-textPrimary" id="github-followers">14</div>
+              <div class="text-[9px] text-textMuted uppercase font-mono mt-0.5">Followers</div>
+            </div>
+          </div>
+
+          <!-- Contribution graph chart -->
+          <div class="bg-bgBase/75 border border-borderMute/60 p-3 rounded-lg space-y-2">
+            <div class="text-[8px] text-textMuted font-mono">CONTRIBUTIONS: HARSHP-16</div>
+            <img id="github-contrib-graph" src="https://ghchart.rshah.org/6366f1/HARSHP-16" alt="GitHub graph" class="w-full h-auto rounded border border-borderMute/30">
+          </div>
+        </div>
+
+        <p class="text-[11px] text-textMuted leading-relaxed border-t border-borderMute/30 pt-3 mt-4">
+          Active developer contributor in GSSoC 25, resolving repo warnings and managing standard version controls.
+        </p>
+      </div>
+
+    </section>
+
+    <!-- Section: Redesigned Projects (No Images) -->
+    <section id="projects-cards" class="space-y-6">
+      <div class="border-b border-borderMute pb-4 flex justify-between items-end">
+        <h2 class="font-display font-bold text-xl text-textPrimary">
+          Technical Projects Portfolio
+        </h2>
+        <span class="text-[10px] text-textMuted font-mono uppercase tracking-wider">Clean Code Architecture</span>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+
+        <!-- Project 1: KMRL Document Intel -->
+        <div class="premium-card p-6 rounded-2xl flex flex-col justify-between space-y-6 border-glow snappy-transition group">
+          <div class="space-y-4">
+            <div class="flex justify-between items-center text-[10px] font-mono">
+              <span class="text-accentTech font-bold">// DOCUMENT OCR PIPELINE</span>
+              <span class="text-textMuted">Python / Tesseract</span>
+            </div>
+            
+            <h3 class="text-lg font-display font-bold text-textPrimary group-hover:text-accentTech snappy-transition">
+              KMRL Document Intelligence
+            </h3>
+            
+            <p class="text-xs text-textMuted leading-relaxed">
+              Constructed scanned administrative document translator interface for Kochi Metro Rail Ltd. to search files. Cleans image scans before extracting text arrays.
+            </p>
+
+            <ul class="text-[11px] text-textMuted font-mono space-y-1 pl-4 list-disc">
+              <li>Analyzes Scanned files in Malayalam and English</li>
+              <li>Achieved ~92% accuracy index in prototype tests</li>
+              <li>Replaces manual catalog registry query sheets</li>
+            </ul>
+          </div>
+
+          <div class="border-t border-borderMute/50 pt-4 flex justify-between items-center text-xs font-mono">
+            <span class="text-textMuted">Query Latency: <strong class="text-textPrimary">&lt;10ms</strong></span>
+            <a href="https://github.com/HARSHP-16/Portfolio-website" target="_blank" class="px-3.5 py-1.5 bg-bgBase hover:bg-borderMute border border-borderMute text-textPrimary hover:border-accentTech rounded-lg snappy-transition">
+              GitHub
+            </a>
+          </div>
+        </div>
+
+        <!-- Project 2: MediPredict Analytics -->
+        <div class="premium-card p-6 rounded-2xl flex flex-col justify-between space-y-6 border-glow snappy-transition group">
+          <div class="space-y-4">
+            <div class="flex justify-between items-center text-[10px] font-mono">
+              <span class="text-accentTech font-bold">// HEALTH DATA VISUALIZATION</span>
+              <span class="text-textMuted">JavaScript / Chart.js</span>
+            </div>
+            
+            <h3 class="text-lg font-display font-bold text-textPrimary group-hover:text-accentTech snappy-transition">
+              MediPredict Vitals Panel
+            </h3>
+            
+            <p class="text-xs text-textMuted leading-relaxed">
+              A client-side patient analytics dashboard mapping biometric coordinates. Predicts diabetic risk scores and renders charts locally in the client browser.
+            </p>
+
+            <ul class="text-[11px] text-textMuted font-mono space-y-1 pl-4 list-disc">
+              <li>Local weight formulas run client-side for data security</li>
+              <li>Zero metrics transmitted to external cloud systems</li>
+              <li>Responsive data binding deployed at medipredict.me</li>
+            </ul>
+          </div>
+
+          <div class="border-t border-borderMute/50 pt-4 flex justify-between items-center text-xs font-mono">
+            <span class="text-textMuted">Compute: <strong class="text-textPrimary">&lt;5ms local</strong></span>
+            <a href="https://github.com/HARSHP-16/MediPredict-.git" target="_blank" class="px-3.5 py-1.5 bg-bgBase hover:bg-borderMute border border-borderMute text-textPrimary hover:border-accentTech rounded-lg snappy-transition">
+              GitHub
+            </a>
+          </div>
+        </div>
+
+        <!-- Project 3: EV Demand Forecast Model -->
+        <div class="premium-card p-6 rounded-2xl flex flex-col justify-between space-y-6 border-glow snappy-transition group">
+          <div class="space-y-4">
+            <div class="flex justify-between items-center text-[10px] font-mono">
+              <span class="text-accentTech font-bold">// LOAD DEMAND FORECASTING</span>
+              <span class="text-textMuted">Python / XGBoost</span>
+            </div>
+            
+            <h3 class="text-lg font-display font-bold text-textPrimary group-hover:text-accentTech snappy-transition">
+              EV Grid Demand Prediction
+            </h3>
+            
+            <p class="text-xs text-textMuted leading-relaxed">
+              XGBoost regression models trained on historic EV charging station records to predict transformer grid load stresses and regional capacity stresses.
+            </p>
+
+            <ul class="text-[11px] text-textMuted font-mono space-y-1 pl-4 list-disc">
+              <li>Handles KNN imputation methods for missing log values</li>
+              <li>Utilizes StandardScaler variables to minimize RMSE deviations</li>
+              <li>Enables operators to anticipate local charging stress</li>
+            </ul>
+          </div>
+
+          <div class="border-t border-borderMute/50 pt-4 flex justify-between items-center text-xs font-mono">
+            <span class="text-textMuted">Metrics: <strong class="text-textPrimary">~0.84 R² Score</strong></span>
+            <a href="https://github.com/HARSHP-16/EV-VEHICLE_DEMAND_PREDICTION" target="_blank" class="px-3.5 py-1.5 bg-bgBase hover:bg-borderMute border border-borderMute text-textPrimary hover:border-accentTech rounded-lg snappy-transition">
+              GitHub
+            </a>
+          </div>
+        </div>
+
+        <!-- Project 4: Hostel Database Ledger -->
+        <div class="premium-card p-6 rounded-2xl flex flex-col justify-between space-y-6 border-glow snappy-transition group">
+          <div class="space-y-4">
+            <div class="flex justify-between items-center text-[10px] font-mono">
+              <span class="text-accentTech font-bold">// TRANSACTION DATABASE LEDGER</span>
+              <span class="text-textMuted">Flask / SQLite</span>
+            </div>
+            
+            <h3 class="text-lg font-display font-bold text-textPrimary group-hover:text-accentTech snappy-transition">
+              Hostel Management Ledger
+            </h3>
+            
+            <p class="text-xs text-textMuted leading-relaxed">
+              Relational registration platform utilizing transactional lock states to prevent room allocation double-bookings during peak booking windows.
+            </p>
+
+            <ul class="text-[11px] text-textMuted font-mono space-y-1 pl-4 list-disc">
+              <li>Enforces SQL foreign key and check limits</li>
+              <li>Utilizes isolation structures to prevent write conflicts</li>
+              <li>Secured with cookie authorization sessions</li>
+            </ul>
+          </div>
+
+          <div class="border-t border-borderMute/50 pt-4 flex justify-between items-center text-xs font-mono">
+            <span class="text-textMuted">Isolation: <strong class="text-textPrimary">ACID Compliant</strong></span>
+            <a href="https://github.com/HARSHP-16/Hostel-Management" target="_blank" class="px-3.5 py-1.5 bg-bgBase hover:bg-borderMute border border-borderMute text-textPrimary hover:border-accentTech rounded-lg snappy-transition">
+              GitHub
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Section: Experience Timeline -->
+    <section id="experience" class="grid grid-cols-1 lg:grid-cols-12 gap-8 pt-4">
+      <div class="lg:col-span-4 space-y-3">
+        <h2 class="font-display font-bold text-xl text-textPrimary">
+          Professional Timeline
+        </h2>
+        <p class="text-textMuted text-xs leading-relaxed max-w-sm">
+          A chronological roadmap of engineering contributions, industry internships, open source activities, and active academic credentials.
+        </p>
+      </div>
+      
+      <div class="lg:col-span-8 space-y-4">
+        
+        <!-- Item 1 -->
+        <div class="relative pl-6 border-l-2 border-borderMute hover:border-accentTech snappy-transition pb-2 group">
+          <span class="absolute -left-[6px] top-1.5 w-2.5 h-2.5 rounded-full bg-bgBase border-2 border-borderMute group-hover:border-accentTech group-hover:bg-accentTech shadow-glow snappy-transition"></span>
+          <div class="flex justify-between items-start text-xs font-mono mb-1">
+            <span class="text-textMuted font-bold">SHELL & EDUNET FOUNDATION (AICTE)</span>
+            <span class="text-accentTech font-bold">2025 - 2026</span>
+          </div>
+          <h3 class="text-textPrimary font-display font-bold text-sm">AI & Data Analytics Intern</h3>
+          <p class="text-textMuted text-xs leading-relaxed mt-1.5">
+            Cleaned and normalized EV station historical load data. Implemented predictive demand algorithms using Pandas, NumPy, and python regressors to forecast grid consumption trends.
+          </p>
+        </div>
+
+        <!-- Item 2 -->
+        <div class="relative pl-6 border-l-2 border-borderMute hover:border-accentTech snappy-transition pb-2 group">
+          <span class="absolute -left-[6px] top-1.5 w-2.5 h-2.5 rounded-full bg-bgBase border-2 border-borderMute group-hover:border-accentTech group-hover:bg-accentTech shadow-glow snappy-transition"></span>
+          <div class="flex justify-between items-start text-xs font-mono mb-1">
+            <span class="text-textMuted font-bold">GIRLSCRIPT SUMMER OF CODE (GSSOC)</span>
+            <span class="text-accentTech font-bold">2025</span>
+          </div>
+          <h3 class="text-textPrimary font-display font-bold text-sm">Open Source Contributor</h3>
+          <p class="text-textMuted text-xs leading-relaxed mt-1.5">
+            Collaborated with multi-developer groups on open source utilities. Resolved linting warnings, optimized algorithms, and merged contributions into centralized GitHub repositories.
+          </p>
+        </div>
+
+        <!-- Item 3 -->
+        <div class="relative pl-6 border-l-2 border-borderMute hover:border-accentTech snappy-transition pb-2 group">
+          <span class="absolute -left-[6px] top-1.5 w-2.5 h-2.5 rounded-full bg-bgBase border-2 border-borderMute group-hover:border-accentTech group-hover:bg-accentTech shadow-glow snappy-transition"></span>
+          <div class="flex justify-between items-start text-xs font-mono mb-1">
+            <span class="text-textMuted font-bold">AWS CLOUD CLUB WORKGROUPS</span>
+            <span class="text-accentTech font-bold">2024 - PRESENT</span>
+          </div>
+          <h3 class="text-textPrimary font-display font-bold text-sm">Web Development Team</h3>
+          <p class="text-textMuted text-xs leading-relaxed mt-1.5">
+            Assisted with website management and local server setup documentation. Explored basic AWS cloud models (EC2 instances, S3 storage volumes, IAM permissions).
+          </p>
+        </div>
+
+        <!-- Item 4 (Edu) -->
+        <div class="relative pl-6 border-l-2 border-borderMute hover:border-accentTech snappy-transition group">
+          <span class="absolute -left-[6px] top-1.5 w-2.5 h-2.5 rounded-full bg-bgBase border-2 border-borderMute group-hover:border-accentTech group-hover:bg-accentTech shadow-glow snappy-transition"></span>
+          <div class="flex justify-between items-start text-xs font-mono mb-1">
+            <span class="text-textMuted font-bold">I²IT COLLEGE PUNE</span>
+            <span class="text-accentTech font-bold">2024 - PRESENT</span>
+          </div>
+          <h3 class="text-textPrimary font-display font-bold text-sm">B.E. Computer Engineering</h3>
+          <p class="text-textMuted text-xs leading-relaxed mt-1.5">
+            Coursework in Data Structures, Algorithms, Object-Oriented Programming (OOP) architectures, and Relational Database Systems.
+          </p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Section: Credentials -->
+    <section id="credentials" class="space-y-6">
+      <div class="border-b border-borderMute pb-4">
+        <h2 class="font-display font-bold text-xl text-textPrimary">
+          Professional Certifications
+        </h2>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        
+        <!-- Cert 1 -->
+        <div class="premium-card p-4 rounded-xl flex items-center justify-between border-glow snappy-transition">
+          <div class="space-y-1">
+            <span class="text-[9px] font-mono text-accentTech font-bold uppercase tracking-wider">// SPACE EDUCATION</span>
+            <h3 class="text-xs font-display font-bold text-textPrimary">IIRS-ISRO Remote Sensing Basics</h3>
+          </div>
+          <a href="https://harshp-16.github.io/Portfolio-website/Certifications/%E2%80%9CBasics%20of%20%E2%80%9CRemote%20Sensing,%20Geographical%20Information%20System%20and%20Global%20Navigation%20Satellite%20System%E2%80%9D.pdf" target="_blank" class="px-4 py-2 bg-bgBase hover:bg-accentTech border border-borderMute hover:border-accentTech text-textPrimary hover:text-bgBase font-mono text-[10px] font-bold rounded-lg snappy-transition">
+            VIEW CREDENTIAL
+          </a>
+        </div>
+
+        <!-- Cert 2 -->
+        <div class="premium-card p-4 rounded-xl flex items-center justify-between border-glow snappy-transition">
+          <div class="space-y-1">
+            <span class="text-[9px] font-mono text-accentTech font-bold uppercase tracking-wider">// INDUSTRIAL ML TRAINING</span>
+            <h3 class="text-xs font-display font-bold text-textPrimary">AICTE Shell AI/ML Internship Credit</h3>
+          </div>
+          <a href="https://harshp-16.github.io/Portfolio-website/Experience/HARSH%20RAHUL%20PALKRUTWAR_AICTE_Certificate.pdf" target="_blank" class="px-4 py-2 bg-bgBase hover:bg-accentTech border border-borderMute hover:border-accentTech text-textPrimary hover:text-bgBase font-mono text-[10px] font-bold rounded-lg snappy-transition">
+            VIEW CREDENTIAL
+          </a>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer Section -->
+  <footer class="border-t border-borderMute bg-bgSurface/20 py-12 mt-16 relative z-20">
+    <div class="max-w-6xl mx-auto px-4">
+      <div class="grid grid-cols-1 md:grid-cols-12 gap-8 items-start">
+        
+        <!-- Col 1: Brand & Tagline -->
+        <div class="md:col-span-5 space-y-4">
+          <div class="flex items-center space-x-2.5">
+            <span id="footer-brand-dot" class="w-2.5 h-2.5 rounded-full bg-accentTech shadow-glow"></span>
+            <span class="font-display font-bold tracking-tight text-textPrimary">
+              HARSH PALKRUTWAR
+            </span>
+          </div>
+          <p class="text-xs text-textMuted leading-relaxed max-w-sm">
+            Computer Engineering sophomore at I²IT Pune focusing on web applications and applied machine learning. Devising clean backends, relational ledgers, and predictive models.
+          </p>
+        </div>
+        
+        <!-- Col 2: Navigation Links -->
+        <div class="md:col-span-4 space-y-3">
+          <h4 class="text-xs font-mono font-bold text-accentTech uppercase tracking-widest">// NAVIGATION</h4>
+          <ul class="grid grid-cols-2 gap-2 text-xs text-textMuted">
+            <li><a href="#about" class="hover:text-accentTech snappy-transition">About</a></li>
+            <li><a href="#achievements" class="hover:text-accentTech snappy-transition">Milestones</a></li>
+            <li><a href="#skills" class="hover:text-accentTech snappy-transition">Skills</a></li>
+            <li><a href="#projects-cards" class="hover:text-accentTech snappy-transition">Projects</a></li>
+            <li><a href="#experience" class="hover:text-accentTech snappy-transition">Experience</a></li>
+          </ul>
+        </div>
+        
+        <!-- Col 3: Social & Contact Links -->
+        <div class="md:col-span-3 space-y-3">
+          <h4 class="text-xs font-mono font-bold text-accentTech uppercase tracking-widest">// CONNECT</h4>
+          <div class="flex flex-col space-y-2 text-xs text-textMuted">
+            <a href="mailto:palkrutwarharsh@gmail.com" class="hover:text-accentTech snappy-transition flex items-center space-x-1.5">
+              <span>✉️</span> <span>palkrutwarharsh@gmail.com</span>
+            </a>
+            <a href="https://github.com/HARSHP-16" target="_blank" class="hover:text-accentTech snappy-transition flex items-center space-x-1.5">
+              <span>🐙</span> <span>GitHub Profile</span>
+            </a>
+            <a href="https://www.linkedin.com/in/harsh-palkrutwar/" target="_blank" class="hover:text-accentTech snappy-transition flex items-center space-x-1.5">
+              <span>🔗</span> <span>LinkedIn Profile</span>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="border-t border-borderMute/40 mt-8 pt-8 flex flex-col sm:flex-row justify-between items-center gap-4 text-[10px] font-mono text-textMuted">
+        <div>
+          © 2026 Harsh Palkrutwar. All rights reserved.
+        </div>
+        <div class="flex items-center space-x-2">
+          <span>Built with HTML5, CSS Variables, & Tailwind CSS</span>
+          <span class="w-1 h-1 rounded-full bg-borderMute"></span>
+          <a href="https://github.com/HARSHP-16/Portfolio-website" target="_blank" class="text-accentTech hover:underline">Source Code</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Split JS Scripts -->
+  <script src="js/state.js"></script>
+  <script src="js/themes.js"></script>
+  <script src="js/particles.js"></script>
+  <script src="js/github.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
